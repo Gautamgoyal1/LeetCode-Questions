@@ -26,10 +26,6 @@ class Solution {
                 if(prev == 0){
                     prev = count;
                     start = count;
-                    count++;
-                    head = head.next;
-                    value = curr;
-                    continue;
                 }
                 else {
                     maxi = Math.max(maxi,count - start);
@@ -41,14 +37,12 @@ class Solution {
                 if(prev == 0){
                     prev = count;
                     start = count;
-                    count++;
-                    head = head.next;
-                    value = curr;
-                    continue;
                 }
-                maxi = Math.max(maxi,count - start);
-                mini = Math.min(mini,count-prev);
-                prev =  count;
+                else {
+                    maxi = Math.max(maxi,count - start);
+                    mini = Math.min(mini,count-prev);
+                    prev =  count;
+                }
             }
             count++;
             value = curr;
